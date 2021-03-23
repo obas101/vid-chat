@@ -4,14 +4,22 @@
 			<div class="container-fluid">
 				<router-link class="navbar-brand" to="/">VideoChat App</router-link> |
 				<div class="mr-auto">
-					<span class="navbar-item pl-3 mr-3"> Welcome {{ user }} </span>
-					<router-link to="/host">Host a Meeting</router-link>
+					<span class="navbar-item pl-3 mr-3" v-if="user">
+						Welcome {{ user.displayName }}
+					</span>
 				</div>
 				<span class="navbar-item">
+					<router-link to="/host">Host a Meeting</router-link>
+				</span>
+
+				<span class="navbar-item pl-3" v-if="!user">
 					<router-link to="/login">Log In</router-link>
 				</span>
-				<span class="navbar-item pl-3">
+				<span class="navbar-item pl-3" v-if="!user">
 					<router-link to="/register">Register</router-link>
+				</span>
+				<span class="navbar-item pl-3" v-if="user">
+					<button @click="$emit('logout')">Log Out</button>
 				</span>
 			</div>
 		</nav>

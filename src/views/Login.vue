@@ -20,7 +20,7 @@
 					<label>Password</label>
 					<input type="password" class="form-control" v-model="password" />
 				</div>
-				<button @click.prevent="login()" class="btn btn-primary">Submit</button>
+				<button @click.prevent="login" class="btn btn-primary">Submit</button>
 				<div class="spacing"></div>
 				<div style="color: red" v-if="error">{{ error }}</div>
 				<p>or <router-link to="/register">Sign Up</router-link></p>

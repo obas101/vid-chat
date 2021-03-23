@@ -6,7 +6,7 @@
 			<form class="mx-6">
 				<div class="form-group">
 					<label>Username</label>
-					<input type="name" class="form-control" v-model="username" />
+					<input type="name" class="form-control" v-model="displayName" />
 					<label>Email address</label>
 					<input
 						type="email"
@@ -48,7 +48,7 @@ export default {
 	name: "Register",
 	data: function() {
 		return {
-			username: null,
+			displayName: null,
 			email: null,
 			passOne: null,
 			passTwo: null,
@@ -58,7 +58,7 @@ export default {
 	methods: {
 		register: function() {
 			const info = {
-				username: this.username,
+				displayName: this.displayName,
 				email: this.email,
 				password: this.passTwo,
 			};
@@ -69,7 +69,7 @@ export default {
 						(userCredentials) => {
 							return userCredentials.user
 								.updateProfile({
-									username: info.username,
+									displayName: info.displayName,
 								})
 								.then(() => {
 									this.$router.replace("/");
