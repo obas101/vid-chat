@@ -1,9 +1,9 @@
 <template>
 	<div class="row">
-		<div class="col-3"></div>
-		<div class="col-6">
+		<div class="col-4"></div>
+		<div class="col-4">
 			<div class="spacing"></div>
-			<form class="mx-6" @submit.prevent="login">
+			<form class="mx-6">
 				<div class="form-group">
 					<label>Email address</label>
 					<input
@@ -20,10 +20,12 @@
 					<label>Password</label>
 					<input type="password" class="form-control" v-model="password" />
 				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button @click.prevent="login()" class="btn btn-primary">Submit</button>
+				<div class="spacing"></div>
+				<div style="color: red" v-if="error">{{ error }}</div>
 			</form>
 		</div>
-		<div class="col-3"></div>
+		<div class="col-4"></div>
 	</div>
 </template>
 
@@ -35,19 +37,25 @@ export default {
 		return {
 			email: null,
 			password: null,
+			error: null,
 		};
 	},
 	methods: {
 		login: function() {
-			const dataCollected = {
+			const info = {
 				email: this.email,
 				password: this.password,
 			};
 			Firebase.auth()
-				.signInWithEmailAndPassword(dataCollected.email, dataCollected.password)
-				.then(() => {
-					this.$router.push("/");
-				});
+				.signInWithEmailAndPassword(info.email, info.password)
+				.then(
+					() => {
+						this.$router.push("/");
+					},
+					(error) => {
+						this.error = error.message;
+					},
+				);
 		},
 	},
 };

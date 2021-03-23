@@ -29,7 +29,4 @@ export default {
 .text-style {
 	text-align: center;
 }
-.spacing {
-	margin-top: 3rem;
-}
 </style>
