@@ -4,13 +4,14 @@
 			<div class="container-fluid">
 				<router-link class="navbar-brand" to="/">VideoChat App</router-link> |
 				<div class="mr-auto">
-					<span class="navbar-item pl-3"> Welcome {{ user }} </span>
-				</div>
-				<span class="navbar-item pl-3">
+					<span class="navbar-item pl-3 mr-3"> Welcome {{ user }} </span>
 					<router-link to="/host">Host a Meeting</router-link>
+				</div>
+				<span class="navbar-item">
+					<router-link to="/login">Log In</router-link>
 				</span>
 				<span class="navbar-item pl-3">
-					<router-link to="/login">Log In</router-link>
+					<router-link to="/register">Register</router-link>
 				</span>
 			</div>
 		</nav>

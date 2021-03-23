@@ -23,6 +23,7 @@
 				<button @click.prevent="login()" class="btn btn-primary">Submit</button>
 				<div class="spacing"></div>
 				<div style="color: red" v-if="error">{{ error }}</div>
+				<p>or <router-link to="/register">Sign Up</router-link></p>
 			</form>
 		</div>
 		<div class="col-4"></div>
