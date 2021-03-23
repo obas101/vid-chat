@@ -15,5 +15,6 @@ export default {
 </script>
 
 <style lang="scss">
+$primary: #0c65a4;
 @import "node_modules/bootstrap/scss/bootstrap";
 </style>

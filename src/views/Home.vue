@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1>Home</h1>
-		<p>Welcome {{ user }}</p>
+		<p>Welcome {{ this.user }}</p>
 	</div>
 </template>
 
