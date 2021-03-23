@@ -4,9 +4,7 @@
 			<div class="container-fluid">
 				<router-link class="navbar-brand" to="/">VideoChat App</router-link> |
 				<div class="mr-auto">
-					<span class="navbar-item mr-auto pl-3">
-						<router-link to="">About</router-link>
-					</span>
+					<span class="navbar-item pl-3"> Welcome {{ user }} </span>
 				</div>
 				<span class="navbar-item pl-3">
 					<router-link to="/host">Host a Meeting</router-link>
@@ -18,3 +16,9 @@
 		</nav>
 	</div>
 </template>
+<script>
+export default {
+	name: "Navigation",
+	props: ["user"],
+};
+</script>
